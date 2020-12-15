@@ -1,1 +1,0 @@
-cmd_/home/pi/hyperdecimator/onboard/pi/hyperdecimator-driver.ko := ld -r  -EL  --build-id  -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds -o /home/pi/hyperdecimator/onboard/pi/hyperdecimator-driver.ko /home/pi/hyperdecimator/onboard/pi/hyperdecimator-driver.o /home/pi/hyperdecimator/onboard/pi/hyperdecimator-driver.mod.o;  true
