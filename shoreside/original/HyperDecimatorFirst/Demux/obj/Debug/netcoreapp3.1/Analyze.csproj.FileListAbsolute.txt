@@ -1,0 +1,15 @@
+C:\code\HyperDecimator\Analyze\bin\Debug\netcoreapp3.1\Analyze.exe
+C:\code\HyperDecimator\Analyze\bin\Debug\netcoreapp3.1\Analyze.deps.json
+C:\code\HyperDecimator\Analyze\bin\Debug\netcoreapp3.1\Analyze.runtimeconfig.json
+C:\code\HyperDecimator\Analyze\bin\Debug\netcoreapp3.1\Analyze.runtimeconfig.dev.json
+C:\code\HyperDecimator\Analyze\bin\Debug\netcoreapp3.1\Analyze.dll
+C:\code\HyperDecimator\Analyze\bin\Debug\netcoreapp3.1\Analyze.pdb
+C:\code\HyperDecimator\Analyze\bin\Debug\netcoreapp3.1\NWaves.dll
+C:\code\HyperDecimator\Analyze\obj\Debug\netcoreapp3.1\Analyze.csprojAssemblyReference.cache
+C:\code\HyperDecimator\Analyze\obj\Debug\netcoreapp3.1\Analyze.AssemblyInfoInputs.cache
+C:\code\HyperDecimator\Analyze\obj\Debug\netcoreapp3.1\Analyze.AssemblyInfo.cs
+C:\code\HyperDecimator\Analyze\obj\Debug\netcoreapp3.1\Analyze.csproj.CoreCompileInputs.cache
+C:\code\HyperDecimator\Analyze\obj\Debug\netcoreapp3.1\Analyze.csproj.CopyComplete
+C:\code\HyperDecimator\Analyze\obj\Debug\netcoreapp3.1\Analyze.dll
+C:\code\HyperDecimator\Analyze\obj\Debug\netcoreapp3.1\Analyze.pdb
+C:\code\HyperDecimator\Analyze\obj\Debug\netcoreapp3.1\Analyze.genruntimeconfig.cache

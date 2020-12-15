@@ -1,0 +1,15 @@
+C:\code\HyperDecimator\Sample\bin\Debug\netcoreapp3.1\Sample.exe
+C:\code\HyperDecimator\Sample\bin\Debug\netcoreapp3.1\Sample.deps.json
+C:\code\HyperDecimator\Sample\bin\Debug\netcoreapp3.1\Sample.runtimeconfig.json
+C:\code\HyperDecimator\Sample\bin\Debug\netcoreapp3.1\Sample.runtimeconfig.dev.json
+C:\code\HyperDecimator\Sample\bin\Debug\netcoreapp3.1\Sample.dll
+C:\code\HyperDecimator\Sample\bin\Debug\netcoreapp3.1\Sample.pdb
+C:\code\HyperDecimator\Sample\bin\Debug\netcoreapp3.1\NWaves.dll
+C:\code\HyperDecimator\Sample\obj\Debug\netcoreapp3.1\Sample.csprojAssemblyReference.cache
+C:\code\HyperDecimator\Sample\obj\Debug\netcoreapp3.1\Sample.AssemblyInfoInputs.cache
+C:\code\HyperDecimator\Sample\obj\Debug\netcoreapp3.1\Sample.AssemblyInfo.cs
+C:\code\HyperDecimator\Sample\obj\Debug\netcoreapp3.1\Sample.csproj.CoreCompileInputs.cache
+C:\code\HyperDecimator\Sample\obj\Debug\netcoreapp3.1\Sample.csproj.CopyComplete
+C:\code\HyperDecimator\Sample\obj\Debug\netcoreapp3.1\Sample.dll
+C:\code\HyperDecimator\Sample\obj\Debug\netcoreapp3.1\Sample.pdb
+C:\code\HyperDecimator\Sample\obj\Debug\netcoreapp3.1\Sample.genruntimeconfig.cache

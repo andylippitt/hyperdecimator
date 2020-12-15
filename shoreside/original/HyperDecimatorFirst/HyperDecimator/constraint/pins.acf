@@ -1,0 +1,16 @@
+	
+pin clock_a A2;
+pin clock_b B2;
+
+pin pdm_a_in A3;
+pin pdm_b_in B3;
+
+
+pin pdm_a_out A27;
+pin pdm_b_out A30;
+
+
+pin spi_mosi A33;
+pin spi_miso A36;
+pin spi_sck A39;
+pin spi_cs A42;

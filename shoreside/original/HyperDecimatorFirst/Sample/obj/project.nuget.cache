@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "lhyv6bhviWd8qX7OesUisi4sq5WFk6hx0JvtQu/x0GP/iZkP1poxpUsduKrOVKT/oS9loq8ViuTUjiUo/M7uiw==",
+  "success": true,
+  "projectFilePath": "C:\\code\\HyperDecimator\\Sample\\Sample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\andyl\\.nuget\\packages\\nwaves\\0.9.4\\nwaves.0.9.4.nupkg.sha512",
+    "C:\\Users\\andyl\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

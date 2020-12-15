@@ -1,0 +1,91 @@
+module au_top (
+    input clk,              // 100MHz clock
+    input rst_n,            // reset button (active low)
+    output led [8],         // 8 user controllable LEDs
+    input usb_rx,           // USB->Serial input
+    output usb_tx,           // USB->Serial output
+    
+    input pdm_data_in[8],
+    output pdm_clock_out[8],
+    
+    
+    output fx3_dq[32],
+    output fx3_pclk,
+    output fx3_slcs_,
+    output fx3_slwr_,
+    output fx3_sloe_,
+    output fx3_slrd_,
+    output fx3_pktend_,
+    input fx3_flaga,
+    input fx3_flagb,
+    input fx3_flagc,
+    input fx3_flagd,
+    output fx3_a[2]
+  ) {
+  
+  sig rst;                  // reset signal
+  
+  .clk(clk) {
+    reset_conditioner reset_cond;
+    pdm_mics pdm(.rst(rst));
+    
+    #BAUD(12000000), #CLK_FREQ(100000000), .rst(rst) {
+      
+      uart_rx rx;
+      uart_tx tx;
+    }
+     
+    dff data[8];            // flip-flops to store last character
+    dff sample_counter[8];
+    
+    dff sample[8];
+    dff sample_ready;
+  }
+  
+  always {
+    reset_cond.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond.out;   // conditioned reset
+    
+    rx.rx = usb_rx;         // connect rx input
+    usb_tx = tx.tx;         // connect tx output
+    
+    pdm.mic_data = pdm_data_in;
+    pdm_clock_out = 8x{pdm.mic_clk};
+    
+    tx.new_data = 0;
+    tx.data = 0;
+
+    if (pdm.new_sample)
+    {
+        sample_counter.d = sample_counter.q + 1;
+        sample.d = pdm.sample;
+        sample_ready.d = 1;
+    }
+    
+    fx3_a = 2b00; // fifo address
+    fx3_slcs_ = 0; // enable the chip
+    fx3_slrd_ = 1; // slave should not write, we are not reading
+    fx3_sloe_  = 1; // slave should not write, we are not reading
+    fx3_pclk = clk;
+    fx3_pktend_ = 1; // not doing partials
+
+    if (sample_ready.q == 1)
+    {
+      fx3_slwr_ = 0; // write if we have a new sample, should be checking flags
+      sample_ready.d = 0;
+    }
+    else
+    {
+      fx3_slwr_ = 1; // write if we have a new sample, should be checking flags
+    }
+    
+    fx3_dq = c{sample.q, sample_counter.q, 8x{1b0}, sample.q}; 
+    
+    // still doing some uart stuff
+    tx.block = 0;           // no flow control, do not block
+    if (rx.new_data)        // new byte received
+      data.d = rx.data;     // save it
+    
+    led = data.q;           // output the data
+  }
+}

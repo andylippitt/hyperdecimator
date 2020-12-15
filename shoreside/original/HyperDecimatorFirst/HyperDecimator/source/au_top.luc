@@ -1,0 +1,127 @@
+ module au_top (
+    input clk,              // 100MHz clock
+    input rst_n,            // reset button (active low)
+    output led [8],         // 8 user controllable LEDs
+    input usb_rx,           // USB->Serial input
+    output usb_tx,           // USB->Serial output
+
+    input spi_mosi,
+    output spi_miso,
+    input spi_sck,
+    input spi_cs,
+    
+    input pdm_a_in,
+    input pdm_b_in,
+    output pdm_a_out,
+    output pdm_b_out,
+    output clock_a,         // output
+    output clock_b         // output
+  ) {
+  
+  sig rst;                  // reset signal
+  sig databyte[8];
+  
+  .clk(clk) {
+    
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond;
+        
+    
+    .rst(rst) {
+  
+      dff send_byte[8];
+      dff last[8];
+      dff framecounter[2];
+      
+      dff waiting;
+      dff last_clock;
+      
+
+      blinker myBlinker;
+      spi_peripheral spi(#CPOL(0),#CPHA(0), .sdi(spi_mosi), .sck(spi_sck), .cs(spi_cs), .data_in(databyte));
+      
+      uart_rx rx (#BAUD(1000000), #CLK_FREQ(100000000)); // serial receiver
+      uart_tx tx (#BAUD(1000000), #CLK_FREQ(100000000)); // serial transmitter
+    }
+  }
+  
+  always {
+    
+    reset_cond.in = ~rst_n;    // input raw inverted reset signal
+    rst = reset_cond.out;      // conditioned reset
+    
+    last_clock.d = myBlinker.blink;
+    
+    clock_a = myBlinker.blink;
+    clock_b = myBlinker.blink;
+
+    //unused
+    pdm_a_out = pdm_a_in;
+    pdm_b_out = pdm_b_in;
+    
+    if (!spi.done && last_clock.q == 0 && myBlinker.blink == 1) //rising edge of 3mhz mic clock
+    {
+      if (!waiting.q)
+      {
+        if (framecounter.q == 2b00)
+        {
+          send_byte.d[5] = pdm_a_in;
+          send_byte.d[4] = pdm_b_in;
+          framecounter.d = framecounter.q + 1;
+        }
+        if (framecounter.q == 2b01)
+        {
+          send_byte.d[3] = pdm_a_in;
+          send_byte.d[2] = pdm_b_in;
+          framecounter.d = framecounter.q + 1;
+        }
+        if (framecounter.q == 2b10)
+        {
+          send_byte.d[1] = pdm_a_in;
+          send_byte.d[0] = pdm_b_in;
+          
+          framecounter.d = framecounter.q + 1;
+          waiting.d = 1;
+        }
+      }
+      if (framecounter.q == 2b11)
+      {
+        framecounter.d = 2b00;
+      }
+    }
+    
+    send_byte.d[7] = waiting.q;
+    send_byte.d[6] = 0;
+    
+    if (spi.done)
+    {
+      if (waiting.q)
+      {
+      
+        last.d = spi.data_out;
+        waiting.d = 0;
+        framecounter.d = 2b00;
+        send_byte.d = 8b00000000;
+      }
+    }
+    
+    databyte = send_byte.q;
+    //databyte = 8b01101001;
+    
+    led = last.q;
+    spi_miso = spi.sdo;
+    
+    rx.rx = usb_rx;         // connect rx input
+    usb_tx = tx.tx;         // connect tx output
+    
+    tx.new_data = 0;
+    tx.data = 0;         
+    tx.block = 0;    
+
+    if (last_clock.q == 0 && myBlinker.blink == 1) //rising edge of 3mhz mic clock
+    {
+      
+    }
+   }
+}

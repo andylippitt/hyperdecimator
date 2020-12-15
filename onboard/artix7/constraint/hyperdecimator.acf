@@ -1,0 +1,77 @@
+
+
+// microphones
+// data: tip
+// clock: ring1
+
+pin pdm_data_in[0] B27;
+pin pdm_data_in[1] B24;
+pin pdm_data_in[2] B21;
+pin pdm_data_in[3] B18;
+pin pdm_data_in[4] B45;
+pin pdm_data_in[5] B48;
+pin pdm_data_in[6] B6;
+pin pdm_data_in[7] B3;
+
+pin pdm_clock_out[0] B28;
+pin pdm_clock_out[1] B23;
+pin pdm_clock_out[2] B20;
+pin pdm_clock_out[3] B17;
+pin pdm_clock_out[4] B46;
+pin pdm_clock_out[5] B49;
+pin pdm_clock_out[6] B5;
+pin pdm_clock_out[7] B2;
+
+
+pin fx3_dq[0] A23;
+pin fx3_dq[1] A24;
+pin fx3_dq[2] A20;
+pin fx3_dq[3] A21;
+pin fx3_dq[4] A17;
+pin fx3_dq[5] A18;
+pin fx3_dq[6] A14;
+pin fx3_dq[7] A15;
+pin fx3_dq[8] A11;
+pin fx3_dq[9] A12;
+pin fx3_dq[10] A8;
+pin fx3_dq[11] A9;
+pin fx3_dq[12] A5;
+pin fx3_dq[13] A6;
+pin fx3_dq[14] A2;
+pin fx3_dq[15] A3;
+pin fx3_dq[16] A27;
+pin fx3_dq[17] A28;
+pin fx3_dq[18] A30;
+pin fx3_dq[19] A31;
+pin fx3_dq[20] A33;
+pin fx3_dq[21] A34;
+pin fx3_dq[22] A36;
+pin fx3_dq[23] A37;
+pin fx3_dq[24] A39;
+pin fx3_dq[25] A40;
+pin fx3_dq[26] A42;
+pin fx3_dq[27] A43;
+pin fx3_dq[28] A45;
+pin fx3_dq[29] A46;
+pin fx3_dq[30] A48;
+pin fx3_dq[31] A49;
+
+
+pin fx3_pclk C39;
+
+pin fx3_slcs_ C2; //SLCS_  ctl[0]
+pin fx3_slwr_ C3; //SLWR_  ctl[1]
+pin fx3_sloe_ C5; //SLOE_  ctl[2]
+pin fx3_slrd_ C6; //SLRD_  ctl[3]
+pin fx3_flaga C8; //FLAGA  ctl[4]
+pin fx3_flagb C9; //FLAGB  ctl[5]
+pin fx3_flagc C42; // FLAGC  ctl[6]
+pin fx3_pktend_ C43; //PKTEND_  ctl[7]
+pin fx3_flagd C45; // FLAGD  ctl[8]
+
+//pin fx3_ctl[9] C46; // unused  ctl[9]
+//pin fx3_ctl[10] C48; // unused  ctl[10]
+
+pin fx3_a[1] C49; //A1  ctl[11]
+pin fx3_a[0] C40; //A0  ctl[12]
+

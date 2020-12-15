@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Demux": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\code\\HyperDecimator\\Demux"
+    }
+  }
+}
