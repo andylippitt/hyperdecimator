@@ -1,0 +1,10 @@
+service hyperdecimator
+{
+    port            = 3333
+    socket_type     = stream
+    protocol        = tcp
+    wait            = no
+    user            = root
+    server          = /usr/local/hyperdecimator
+    type	    = unlisted
+}

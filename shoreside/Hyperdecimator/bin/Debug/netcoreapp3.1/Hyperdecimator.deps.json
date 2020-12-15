@@ -1,0 +1,102 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Hyperdecimator/1.0.0": {
+        "dependencies": {
+          "McMaster.Extensions.CommandLineUtils": "3.0.0",
+          "NWaves": "0.9.4",
+          "RingBuffer": "1.5.1"
+        },
+        "runtime": {
+          "Hyperdecimator.dll": {}
+        }
+      },
+      "McMaster.Extensions.CommandLineUtils/3.0.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/McMaster.Extensions.CommandLineUtils.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "NWaves/0.9.4": {
+        "runtime": {
+          "lib/netstandard2.0/NWaves.dll": {
+            "assemblyVersion": "0.9.4.0",
+            "fileVersion": "0.9.4.0"
+          }
+        }
+      },
+      "PerfCopy/1.2.0": {
+        "runtime": {
+          "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/PerfCopy.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "RingBuffer/1.5.1": {
+        "dependencies": {
+          "PerfCopy": "1.2.0"
+        },
+        "runtime": {
+          "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/RingByteBuffer.dll": {
+            "assemblyVersion": "1.5.1.0",
+            "fileVersion": "1.5.1.0"
+          }
+        }
+      },
+      "System.ComponentModel.Annotations/4.7.0": {}
+    }
+  },
+  "libraries": {
+    "Hyperdecimator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "McMaster.Extensions.CommandLineUtils/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Km485A+AaBUWjOr2D2k6EAK9vKgLuIGS3ov+a8Px6svaNuRfr3qPYYItMYZEsG/xrjgRs/6KE+Zx3lHONUHCbQ==",
+      "path": "mcmaster.extensions.commandlineutils/3.0.0",
+      "hashPath": "mcmaster.extensions.commandlineutils.3.0.0.nupkg.sha512"
+    },
+    "NWaves/0.9.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XXV5PoBZVdp5UNajP5+l74nNDD/xe7GKWrn9LbTdoz0CJ4j6geKM2k2VY4LcUNLWmnFJeNgstd4L35d1YuJP6w==",
+      "path": "nwaves/0.9.4",
+      "hashPath": "nwaves.0.9.4.nupkg.sha512"
+    },
+    "PerfCopy/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qTO0kAs8wK5o3Ij1QbRpUo+9gu75gIQpR86tTXxCb+5syqClBvpZ2luUoocg2s34OxWE/q83VlmYZot63lZYAw==",
+      "path": "perfcopy/1.2.0",
+      "hashPath": "perfcopy.1.2.0.nupkg.sha512"
+    },
+    "RingBuffer/1.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mkhHnDbq5QVuupFujeXTtsPG7vaItcTVInhsQK/BJoYCBTkE648xM9AhjNA1Us1Qvzj6w+vWGYmhy4tI/SyReg==",
+      "path": "ringbuffer/1.5.1",
+      "hashPath": "ringbuffer.1.5.1.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
+      "path": "system.componentmodel.annotations/4.7.0",
+      "hashPath": "system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+
+Compiling usb driver
+https://raspberrypi.stackexchange.com/questions/39845/how-compile-a-loadable-kernel-module-without-recompiling-kernel

@@ -1,0 +1,306 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "McMaster.Extensions.CommandLineUtils/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/McMaster.Extensions.CommandLineUtils.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/McMaster.Extensions.CommandLineUtils.dll": {}
+        }
+      },
+      "NWaves/0.9.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NWaves.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NWaves.dll": {}
+        }
+      },
+      "PerfCopy/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/PerfCopy.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/PerfCopy.dll": {}
+        }
+      },
+      "RingBuffer/1.5.1": {
+        "type": "package",
+        "dependencies": {
+          "PerfCopy": "1.2.0"
+        },
+        "compile": {
+          "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/RingByteBuffer.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/RingByteBuffer.dll": {}
+        }
+      },
+      "System.ComponentModel.Annotations/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/System.ComponentModel.Annotations.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "McMaster.Extensions.CommandLineUtils/3.0.0": {
+      "sha512": "Km485A+AaBUWjOr2D2k6EAK9vKgLuIGS3ov+a8Px6svaNuRfr3qPYYItMYZEsG/xrjgRs/6KE+Zx3lHONUHCbQ==",
+      "type": "package",
+      "path": "mcmaster.extensions.commandlineutils/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net45/McMaster.Extensions.CommandLineUtils.dll",
+        "lib/net45/McMaster.Extensions.CommandLineUtils.xml",
+        "lib/netstandard2.0/McMaster.Extensions.CommandLineUtils.dll",
+        "lib/netstandard2.0/McMaster.Extensions.CommandLineUtils.xml",
+        "mcmaster.extensions.commandlineutils.3.0.0.nupkg.sha512",
+        "mcmaster.extensions.commandlineutils.nuspec"
+      ]
+    },
+    "NWaves/0.9.4": {
+      "sha512": "XXV5PoBZVdp5UNajP5+l74nNDD/xe7GKWrn9LbTdoz0CJ4j6geKM2k2VY4LcUNLWmnFJeNgstd4L35d1YuJP6w==",
+      "type": "package",
+      "path": "nwaves/0.9.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NWaves.dll",
+        "logo.png",
+        "nwaves.0.9.4.nupkg.sha512",
+        "nwaves.nuspec"
+      ]
+    },
+    "PerfCopy/1.2.0": {
+      "sha512": "qTO0kAs8wK5o3Ij1QbRpUo+9gu75gIQpR86tTXxCb+5syqClBvpZ2luUoocg2s34OxWE/q83VlmYZot63lZYAw==",
+      "type": "package",
+      "path": "perfcopy/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/PerfCopy.dll",
+        "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/PerfCopy.pdb",
+        "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/PerfCopy.xml",
+        "perfcopy.1.2.0.nupkg.sha512",
+        "perfcopy.nuspec"
+      ]
+    },
+    "RingBuffer/1.5.1": {
+      "sha512": "mkhHnDbq5QVuupFujeXTtsPG7vaItcTVInhsQK/BJoYCBTkE648xM9AhjNA1Us1Qvzj6w+vWGYmhy4tI/SyReg==",
+      "type": "package",
+      "path": "ringbuffer/1.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/RingByteBuffer.dll",
+        "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/RingByteBuffer.pdb",
+        "lib/portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1/RingByteBuffer.xml",
+        "ringbuffer.1.5.1.nupkg.sha512",
+        "ringbuffer.nuspec"
+      ]
+    },
+    "System.ComponentModel.Annotations/4.7.0": {
+      "sha512": "0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
+      "type": "package",
+      "path": "system.componentmodel.annotations/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net461/System.ComponentModel.Annotations.dll",
+        "lib/netcore50/System.ComponentModel.Annotations.dll",
+        "lib/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.0/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.1/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.1/System.ComponentModel.Annotations.xml",
+        "lib/portable-net45+win8/_._",
+        "lib/win8/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net461/System.ComponentModel.Annotations.dll",
+        "ref/net461/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/System.ComponentModel.Annotations.dll",
+        "ref/netcore50/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/de/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/es/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/fr/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/it/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ja/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ko/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ru/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard2.0/System.ComponentModel.Annotations.dll",
+        "ref/netstandard2.0/System.ComponentModel.Annotations.xml",
+        "ref/netstandard2.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard2.1/System.ComponentModel.Annotations.xml",
+        "ref/portable-net45+win8/_._",
+        "ref/win8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.annotations.4.7.0.nupkg.sha512",
+        "system.componentmodel.annotations.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "McMaster.Extensions.CommandLineUtils >= 3.0.0",
+      "NWaves >= 0.9.4",
+      "RingBuffer >= 1.5.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\andyl\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\code\\Hyperdecimator\\Hyperdecimator\\Hyperdecimator.csproj",
+      "projectName": "Hyperdecimator",
+      "projectPath": "C:\\code\\Hyperdecimator\\Hyperdecimator\\Hyperdecimator.csproj",
+      "packagesPath": "C:\\Users\\andyl\\.nuget\\packages\\",
+      "outputPath": "C:\\code\\Hyperdecimator\\Hyperdecimator\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\andyl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "McMaster.Extensions.CommandLineUtils": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
+          "NWaves": {
+            "target": "Package",
+            "version": "[0.9.4, )"
+          },
+          "RingBuffer": {
+            "target": "Package",
+            "version": "[1.5.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PerfCopy 1.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "PerfCopy",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RingBuffer 1.5.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "RingBuffer",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

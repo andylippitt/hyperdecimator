@@ -1,0 +1,13 @@
+﻿./grabserial -d /dev/ttyUSB1 -B 12000000 > /dev/null
+stty raw < /dev/ttyUSB1 > /dev/null
+
+
+pi@hyperdecimator:~ $ setserial -a /dev/ttyUSB1
+/dev/ttyUSB1, Line 0, UART: unknown, Port: 0x0000, IRQ: 0
+        Baud_base: 60000000, close_delay: 0, divisor: 0
+        closing_wait: infinite
+        Flags: spd_normal
+
+
+
+sudo ./start.sh
