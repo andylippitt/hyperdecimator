@@ -1,0 +1,39 @@
+module pdm_mics (
+    input clk,             // clock
+    input rst,             // reset
+    output mic_clk,        // clock for all the microphones
+    input mic_data[8],    // data from each microphone
+    output sample[8], // sample from all 7 microphones
+    output new_sample      // new sample flag
+  ) {
+   
+  .clk(clk) {
+    .rst(rst) {
+      counter clk_ctr (#SIZE(4), #TOP(9));       // clock divider counter
+      dff mic_clk_reg;                           // mic_clk dff
+    }
+    edge_detector clk_edge (#RISE(0), #FALL(1)); // clock counter reset detector
+    
+    dff sample_register[8];
+    dff sample_ready;
+  }
+   
+  always {
+    clk_edge.in = clk_ctr.value[3];   // this bit will fall when clk_ctr resets
+    if (clk_edge.out)                 // if fall was detected
+      mic_clk_reg.d = ~mic_clk_reg.q; // toggle the mic clock
+    
+    mic_clk = mic_clk_reg.q;          // output mic clock
+    
+    sample_ready.d = 0;
+
+    if (mic_clk_reg.q == 0 && clk_edge.out)
+    {
+      sample_register.d = mic_data;
+      sample_ready.d = 1;
+    }
+    
+    new_sample = sample_ready.q;
+    sample = sample_register.q;
+  }
+}
