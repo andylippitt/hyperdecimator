@@ -8,7 +8,6 @@ module au_top (
     input pdm_data_in[8],
     output pdm_clock_out[8],
     
-    
     output fx3_dq[32],
     output fx3_pclk,
     output fx3_slcs_,
@@ -40,6 +39,9 @@ module au_top (
     
     dff sample[8];
     dff sample_ready;
+    
+    dff booting;
+    
   }
   
   always {
@@ -54,32 +56,50 @@ module au_top (
     
     tx.new_data = 0;
     tx.data = 0;
-
-    if (pdm.new_sample)
-    {
-        sample_counter.d = sample_counter.q + 1;
-        sample.d = pdm.sample;
-        sample_ready.d = 1;
-    }
     
-    fx3_a = 2b00; // fifo address
-    fx3_slcs_ = 0; // enable the chip
-    fx3_slrd_ = 1; // slave should not write, we are not reading
-    fx3_sloe_  = 1; // slave should not write, we are not reading
-    fx3_pclk = clk;
-    fx3_pktend_ = 1; // not doing partials
-
-    if (sample_ready.q == 1)
+    if (booting.q==0)
     {
-      fx3_slwr_ = 0; // write if we have a new sample, should be checking flags
-      sample_ready.d = 0;
+      fx3_dq = 0;
+      fx3_a = 2b00;
+      fx3_slcs_ = 0; 
+      fx3_slrd_ = 0;
+      fx3_sloe_  = 0;
+      fx3_pclk = 0;
+      fx3_pktend_ = 0;
+      
+      if (fx3_flaga == 1 || fx3_flagb == 1 || fx3_flagc == 1 || fx3_flagd == 1)
+      {
+        booting.d = 1;
+      }
     }
     else
     {
-      fx3_slwr_ = 1; // write if we have a new sample, should be checking flags
+      if (pdm.new_sample)
+      {
+          sample_counter.d = sample_counter.q + 1;
+          sample.d = pdm.sample;
+          sample_ready.d = 1;
+      }
+      
+      fx3_a = 2b00; // fifo address
+      fx3_slcs_ = 0; // enable the chip
+      fx3_slrd_ = 1; // slave should not write, we are not reading
+      fx3_sloe_  = 1; // slave should not write, we are not reading
+      fx3_pclk = clk;
+      fx3_pktend_ = 1; // not doing partials
+  
+      if (sample_ready.q == 1)
+      {
+        fx3_slwr_ = 0; // write if we have a new sample, should be checking flags
+        sample_ready.d = 0;
+      }
+      else
+      {
+        fx3_slwr_ = 1; // write if we have a new sample, should be checking flags
+      }
+      
+      fx3_dq = c{sample.q, sample_counter.q, 8x{1b0}, sample.q}; 
     }
-    
-    fx3_dq = c{sample.q, sample_counter.q, 8x{1b0}, sample.q}; 
     
     // still doing some uart stuff
     tx.block = 0;           // no flow control, do not block
