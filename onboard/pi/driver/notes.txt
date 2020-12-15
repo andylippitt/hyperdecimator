@@ -1,0 +1,34 @@
+
+
+https://raspberrypi.stackexchange.com/questions/39845/how-compile-a-loadable-kernel-module-without-recompiling-kernel
+https://raspberrypi.stackexchange.com/a/40419
+
+# The usual update routine
+apt-get update -y
+apt-get upgrade -y
+
+# Update the kernel!
+rpi-update
+
+# Get rpi-source
+sudo wget https://raw.githubusercontent.com/notro/rpi-source/master/rpi-source -O /usr/bin/rpi-source
+
+# Make it executable
+sudo chmod +x /usr/bin/rpi-source
+
+# Tell the update mechanism that this is the latest version of the script
+/usr/bin/rpi-source -q --tag-update
+
+# Get the kernel files thingies.
+rpi-source --skip-gcc
+
+
+then you can 
+`sudo make` the driver
+
+
+move .ko to
+`/usr/lib/modules/$(uname -r)/`
+
+
+append hyperdecimator to /etc/modules

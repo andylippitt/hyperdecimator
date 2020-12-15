@@ -5,6 +5,7 @@ service hyperdecimator
     protocol        = tcp
     wait            = no
     user            = root
-    server          = /usr/local/hyperdecimator
-    type	    = unlisted
+    server          = cat
+    server_args     = /dev/hyperdecimator0
+    type	        = unlisted
 }
