@@ -139,5 +139,6 @@ static void __exit hyperdecimator_exit(void)
 module_init(hyperdecimator_init);
 module_exit(hyperdecimator_exit);
 
+MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Andy Lippitt");
 MODULE_DESCRIPTION("USB Hyperdecimator Device Driver");

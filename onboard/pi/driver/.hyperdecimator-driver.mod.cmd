@@ -1,0 +1,1 @@
+cmd_/home/pi/hyperdecimator/onboard/pi/driver/hyperdecimator-driver.mod := { echo  /home/pi/hyperdecimator/onboard/pi/driver/hyperdecimator-driver.o; echo; } > /home/pi/hyperdecimator/onboard/pi/driver/hyperdecimator-driver.mod
