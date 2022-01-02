@@ -25,37 +25,25 @@ module au_top (
   sig rst;                  // reset signal
   
   .clk(clk) {
-    reset_conditioner reset_cond;
-    pdm_mics pdm(.rst(rst));
-    
-    #BAUD(12000000), #CLK_FREQ(100000000), .rst(rst) {
-      
-      uart_rx rx;
-      uart_tx tx;
-    }
+    reset_conditioner reset_cond;    
      
-    dff data[8];            // flip-flops to store last character
     dff sample_counter[8];
-    
     dff sample[8];
-    dff sample_ready;
-    
     dff booting;
+    dff cycle[8];
+    dff mic_clock;
+    
+    dff bootcounter[32];
     
   }
   
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
+
+    usb_tx = usb_rx;         // connect tx output
     
-    rx.rx = usb_rx;         // connect rx input
-    usb_tx = tx.tx;         // connect tx output
-    
-    pdm.mic_data = pdm_data_in;
-    pdm_clock_out = 8x{pdm.mic_clk};
-    
-    tx.new_data = 0;
-    tx.data = 0;
+    pdm_clock_out = 8x{mic_clock.q};
     
     if (booting.q==0)
     {
@@ -66,46 +54,44 @@ module au_top (
       fx3_sloe_  = 0;
       fx3_pclk = 0;
       fx3_pktend_ = 0;
+      fx3_slwr_ = 0;
       
-      if (fx3_flaga == 1 || fx3_flagb == 1 || fx3_flagc == 1 || fx3_flagd == 1)
-      {
+      bootcounter.d = bootcounter.q + 1;
+      
+      if (bootcounter.q == 400000000)
         booting.d = 1;
-      }
     }
     else
     {
-      if (pdm.new_sample)
-      {
-          sample_counter.d = sample_counter.q + 1;
-          sample.d = pdm.sample;
-          sample_ready.d = 1;
-      }
-      
       fx3_a = 2b00; // fifo address
       fx3_slcs_ = 0; // enable the chip
       fx3_slrd_ = 1; // slave should not write, we are not reading
       fx3_sloe_  = 1; // slave should not write, we are not reading
       fx3_pclk = clk;
       fx3_pktend_ = 1; // not doing partials
-  
-      if (sample_ready.q == 1)
-      {
+      
+      cycle.d = cycle.q +1;
+
+      if (cycle.q == 15)
+        mic_clock.d = 0;
+              
+      if (cycle.q == 29)
+        sample.d = pdm_data_in;
+
+      fx3_slwr_ = 1;
+      if (cycle.q == 30)
         fx3_slwr_ = 0; // write if we have a new sample, should be checking flags
-        sample_ready.d = 0;
-      }
-      else
+      
+      if (cycle.q == 31)
       {
-        fx3_slwr_ = 1; // write if we have a new sample, should be checking flags
+        mic_clock.d = 1;
+        cycle.d = 0;
+        sample_counter.d = sample_counter.q+1;
       }
       
-      fx3_dq = c{sample.q, sample_counter.q, 8x{1b0}, sample.q}; 
+      fx3_dq = c{cycle.q, sample_counter.q, 8x{0}, sample.q}; 
     }
     
-    // still doing some uart stuff
-    tx.block = 0;           // no flow control, do not block
-    if (rx.new_data)        // new byte received
-      data.d = rx.data;     // save it
-    
-    led = data.q;           // output the data
+    led = 8x{booting.q};           // output the data
   }
 }

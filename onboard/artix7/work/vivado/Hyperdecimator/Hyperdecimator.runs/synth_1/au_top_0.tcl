@@ -84,12 +84,7 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/code/hyperdecimator/onboard/artix7/work/vivado/Hyperdecimator/Hyperdecimator.srcs/sources_1/imports/verilog/counter_5.v
-  C:/code/hyperdecimator/onboard/artix7/work/vivado/Hyperdecimator/Hyperdecimator.srcs/sources_1/imports/verilog/edge_detector_6.v
-  C:/code/hyperdecimator/onboard/artix7/work/vivado/Hyperdecimator/Hyperdecimator.srcs/sources_1/imports/verilog/pdm_mics_2.v
   C:/code/hyperdecimator/onboard/artix7/work/vivado/Hyperdecimator/Hyperdecimator.srcs/sources_1/imports/verilog/reset_conditioner_1.v
-  C:/code/hyperdecimator/onboard/artix7/work/vivado/Hyperdecimator/Hyperdecimator.srcs/sources_1/imports/verilog/uart_rx_3.v
-  C:/code/hyperdecimator/onboard/artix7/work/vivado/Hyperdecimator/Hyperdecimator.srcs/sources_1/imports/verilog/uart_tx_4.v
   C:/code/hyperdecimator/onboard/artix7/work/vivado/Hyperdecimator/Hyperdecimator.srcs/sources_1/imports/verilog/au_top_0.v
 }
 OPTRACE "Adding files" END { }

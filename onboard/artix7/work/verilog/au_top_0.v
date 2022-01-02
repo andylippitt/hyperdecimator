@@ -37,63 +37,25 @@ module au_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [1-1:0] M_pdm_mic_clk;
-  wire [8-1:0] M_pdm_sample;
-  wire [1-1:0] M_pdm_new_sample;
-  reg [8-1:0] M_pdm_mic_data;
-  pdm_mics_2 pdm (
-    .clk(clk),
-    .rst(rst),
-    .mic_data(M_pdm_mic_data),
-    .mic_clk(M_pdm_mic_clk),
-    .sample(M_pdm_sample),
-    .new_sample(M_pdm_new_sample)
-  );
-  wire [8-1:0] M_rx_data;
-  wire [1-1:0] M_rx_new_data;
-  reg [1-1:0] M_rx_rx;
-  uart_rx_3 rx (
-    .clk(clk),
-    .rst(rst),
-    .rx(M_rx_rx),
-    .data(M_rx_data),
-    .new_data(M_rx_new_data)
-  );
-  wire [1-1:0] M_tx_tx;
-  wire [1-1:0] M_tx_busy;
-  reg [1-1:0] M_tx_block;
-  reg [8-1:0] M_tx_data;
-  reg [1-1:0] M_tx_new_data;
-  uart_tx_4 tx (
-    .clk(clk),
-    .rst(rst),
-    .block(M_tx_block),
-    .data(M_tx_data),
-    .new_data(M_tx_new_data),
-    .tx(M_tx_tx),
-    .busy(M_tx_busy)
-  );
-  reg [7:0] M_data_d, M_data_q = 1'h0;
   reg [7:0] M_sample_counter_d, M_sample_counter_q = 1'h0;
   reg [7:0] M_sample_d, M_sample_q = 1'h0;
-  reg M_sample_ready_d, M_sample_ready_q = 1'h0;
   reg M_booting_d, M_booting_q = 1'h0;
+  reg [7:0] M_cycle_d, M_cycle_q = 1'h0;
+  reg M_mic_clock_d, M_mic_clock_q = 1'h0;
+  reg [31:0] M_bootcounter_d, M_bootcounter_q = 1'h0;
   
   always @* begin
-    M_data_d = M_data_q;
+    M_bootcounter_d = M_bootcounter_q;
     M_sample_counter_d = M_sample_counter_q;
+    M_cycle_d = M_cycle_q;
     M_sample_d = M_sample_q;
     M_booting_d = M_booting_q;
-    M_sample_ready_d = M_sample_ready_q;
+    M_mic_clock_d = M_mic_clock_q;
     
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
-    M_rx_rx = usb_rx;
-    usb_tx = M_tx_tx;
-    M_pdm_mic_data = pdm_data_in;
-    pdm_clock_out = {4'h8{M_pdm_mic_clk}};
-    M_tx_new_data = 1'h0;
-    M_tx_data = 1'h0;
+    usb_tx = usb_rx;
+    pdm_clock_out = {4'h8{M_mic_clock_q}};
     if (M_booting_q == 1'h0) begin
       fx3_dq = 1'h0;
       fx3_a = 2'h0;
@@ -102,42 +64,46 @@ module au_top_0 (
       fx3_sloe_ = 1'h0;
       fx3_pclk = 1'h0;
       fx3_pktend_ = 1'h0;
-      if (fx3_flaga == 1'h1 || fx3_flagb == 1'h1 || fx3_flagc == 1'h1 || fx3_flagd == 1'h1) begin
+      fx3_slwr_ = 1'h0;
+      M_bootcounter_d = M_bootcounter_q + 1'h1;
+      if (M_bootcounter_q == 29'h17d78400) begin
         M_booting_d = 1'h1;
       end
     end else begin
-      if (M_pdm_new_sample) begin
-        M_sample_counter_d = M_sample_counter_q + 1'h1;
-        M_sample_d = M_pdm_sample;
-        M_sample_ready_d = 1'h1;
-      end
       fx3_a = 2'h0;
       fx3_slcs_ = 1'h0;
       fx3_slrd_ = 1'h1;
       fx3_sloe_ = 1'h1;
       fx3_pclk = clk;
       fx3_pktend_ = 1'h1;
-      if (M_sample_ready_q == 1'h1) begin
-        fx3_slwr_ = 1'h0;
-        M_sample_ready_d = 1'h0;
-      end else begin
-        fx3_slwr_ = 1'h1;
+      M_cycle_d = M_cycle_q + 1'h1;
+      if (M_cycle_q == 4'hf) begin
+        M_mic_clock_d = 1'h0;
       end
-      fx3_dq = {M_sample_q, M_sample_counter_q, 8'h00, M_sample_q};
+      if (M_cycle_q == 5'h1d) begin
+        M_sample_d = pdm_data_in;
+      end
+      fx3_slwr_ = 1'h1;
+      if (M_cycle_q == 5'h1e) begin
+        fx3_slwr_ = 1'h0;
+      end
+      if (M_cycle_q == 5'h1f) begin
+        M_mic_clock_d = 1'h1;
+        M_cycle_d = 1'h0;
+        M_sample_counter_d = M_sample_counter_q + 1'h1;
+      end
+      fx3_dq = {M_cycle_q, M_sample_counter_q, 8'h00, M_sample_q};
     end
-    M_tx_block = 1'h0;
-    if (M_rx_new_data) begin
-      M_data_d = M_rx_data;
-    end
-    led = M_data_q;
+    led = {4'h8{M_booting_q}};
   end
   
   always @(posedge clk) begin
-    M_data_q <= M_data_d;
     M_sample_counter_q <= M_sample_counter_d;
     M_sample_q <= M_sample_d;
-    M_sample_ready_q <= M_sample_ready_d;
     M_booting_q <= M_booting_d;
+    M_cycle_q <= M_cycle_d;
+    M_mic_clock_q <= M_mic_clock_d;
+    M_bootcounter_q <= M_bootcounter_d;
   end
   
 endmodule

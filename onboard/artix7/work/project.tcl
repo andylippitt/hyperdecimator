@@ -5,7 +5,7 @@ set device xc7a35tftg256-1
 if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 create_project $projName "$projDir/$projName" -part $device
 set_property design_mode RTL [get_filesets sources_1]
-set verilogSources [list "C:/code/hyperdecimator/onboard/artix7/work/verilog/au_top_0.v" "C:/code/hyperdecimator/onboard/artix7/work/verilog/reset_conditioner_1.v" "C:/code/hyperdecimator/onboard/artix7/work/verilog/pdm_mics_2.v" "C:/code/hyperdecimator/onboard/artix7/work/verilog/uart_rx_3.v" "C:/code/hyperdecimator/onboard/artix7/work/verilog/uart_tx_4.v" "C:/code/hyperdecimator/onboard/artix7/work/verilog/counter_5.v" "C:/code/hyperdecimator/onboard/artix7/work/verilog/edge_detector_6.v" ]
+set verilogSources [list "C:/code/hyperdecimator/onboard/artix7/work/verilog/au_top_0.v" "C:/code/hyperdecimator/onboard/artix7/work/verilog/reset_conditioner_1.v" ]
 import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
 set xdcSources [list "C:/code/hyperdecimator/onboard/artix7/work/constraint/alchitry.xdc" "C:/Program\ Files/Alchitry/Alchitry\ Labs/library/components/au.xdc" "C:/code/hyperdecimator/onboard/artix7/work/constraint/hyperdecimator.xdc" ]
 read_xdc $xdcSources
