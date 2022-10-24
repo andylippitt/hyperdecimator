@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "net6.0": {
       "McMaster.Extensions.CommandLineUtils/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -14,13 +14,13 @@
           "lib/netstandard2.0/McMaster.Extensions.CommandLineUtils.dll": {}
         }
       },
-      "NWaves/0.9.4": {
+      "NWaves/0.9.6": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/NWaves.dll": {}
+          "lib/net5.0/NWaves.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/NWaves.dll": {}
+          "lib/net5.0/NWaves.dll": {}
         }
       },
       "PerfCopy/1.2.0": {
@@ -72,16 +72,20 @@
         "mcmaster.extensions.commandlineutils.nuspec"
       ]
     },
-    "NWaves/0.9.4": {
-      "sha512": "XXV5PoBZVdp5UNajP5+l74nNDD/xe7GKWrn9LbTdoz0CJ4j6geKM2k2VY4LcUNLWmnFJeNgstd4L35d1YuJP6w==",
+    "NWaves/0.9.6": {
+      "sha512": "LoVqwy6zgeF9l7Yj9rihWtnbbytZOLtU/lFqjnZRFqOCLJQj60NLFPA4nfvAdzK3PsHeShIw7AuJZKSElcYOGg==",
       "type": "package",
-      "path": "nwaves/0.9.4",
+      "path": "nwaves/0.9.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "README.md",
+        "lib/net5.0/NWaves.dll",
+        "lib/net5.0/NWaves.xml",
         "lib/netstandard2.0/NWaves.dll",
+        "lib/netstandard2.0/NWaves.xml",
         "logo.png",
-        "nwaves.0.9.4.nupkg.sha512",
+        "nwaves.0.9.6.nupkg.sha512",
         "nwaves.nuspec"
       ]
     },
@@ -204,38 +208,45 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    "net6.0": [
       "McMaster.Extensions.CommandLineUtils >= 3.0.0",
-      "NWaves >= 0.9.4",
+      "NWaves >= 0.9.6",
       "RingBuffer >= 1.5.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andyl\\.nuget\\packages\\": {}
+    "C:\\Users\\andyl\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\code\\Hyperdecimator\\Hyperdecimator\\Hyperdecimator.csproj",
+      "projectUniqueName": "C:\\code\\hyperdecimator\\shoreside\\Hyperdecimator\\Hyperdecimator.csproj",
       "projectName": "Hyperdecimator",
-      "projectPath": "C:\\code\\Hyperdecimator\\Hyperdecimator\\Hyperdecimator.csproj",
+      "projectPath": "C:\\code\\hyperdecimator\\shoreside\\Hyperdecimator\\Hyperdecimator.csproj",
       "packagesPath": "C:\\Users\\andyl\\.nuget\\packages\\",
-      "outputPath": "C:\\code\\Hyperdecimator\\Hyperdecimator\\obj\\",
+      "outputPath": "C:\\code\\hyperdecimator\\shoreside\\Hyperdecimator\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\andyl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net6"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net6.0": {
+          "targetAlias": "net6",
           "projectReferences": {}
         }
       },
@@ -246,8 +257,8 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net6.0": {
+        "targetAlias": "net6",
         "dependencies": {
           "McMaster.Extensions.CommandLineUtils": {
             "target": "Package",
@@ -255,7 +266,7 @@
           },
           "NWaves": {
             "target": "Package",
-            "version": "[0.9.4, )"
+            "version": "[0.9.6, )"
           },
           "RingBuffer": {
             "target": "Package",
@@ -277,7 +288,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -286,20 +297,20 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'PerfCopy 1.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "message": "Package 'PerfCopy 1.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "PerfCopy",
       "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
+        "net6.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'RingBuffer 1.5.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "message": "Package 'RingBuffer 1.5.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "RingBuffer",
       "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
+        "net6.0"
       ]
     }
   ]

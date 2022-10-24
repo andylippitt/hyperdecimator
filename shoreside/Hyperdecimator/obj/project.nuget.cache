@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "yRjNAp6nbNIEh7WlpzxzcUfP0+0Bpp+zYg/Qoh4j5j+lwLYG82T4tdb97eBxLfngTreqcaFZD2hg++MoGwHhJw==",
+  "dgSpecHash": "Xm4TtRyWR1xyiFLinH5FfMOPHeGeXBT5UT0Y3DebIDh6IkpPnOoQGX6WUwSXOUGhqBc0pYYO6rwBDVMJHkiA/Q==",
   "success": true,
-  "projectFilePath": "C:\\code\\Hyperdecimator\\Hyperdecimator\\Hyperdecimator.csproj",
+  "projectFilePath": "C:\\code\\hyperdecimator\\shoreside\\Hyperdecimator\\Hyperdecimator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andyl\\.nuget\\packages\\mcmaster.extensions.commandlineutils\\3.0.0\\mcmaster.extensions.commandlineutils.3.0.0.nupkg.sha512",
-    "C:\\Users\\andyl\\.nuget\\packages\\nwaves\\0.9.4\\nwaves.0.9.4.nupkg.sha512",
+    "C:\\Users\\andyl\\.nuget\\packages\\nwaves\\0.9.6\\nwaves.0.9.6.nupkg.sha512",
     "C:\\Users\\andyl\\.nuget\\packages\\perfcopy\\1.2.0\\perfcopy.1.2.0.nupkg.sha512",
     "C:\\Users\\andyl\\.nuget\\packages\\ringbuffer\\1.5.1\\ringbuffer.1.5.1.nupkg.sha512",
     "C:\\Users\\andyl\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
@@ -15,20 +15,20 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'PerfCopy 1.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "message": "Package 'PerfCopy 1.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "PerfCopy",
       "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
+        "net6.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'RingBuffer 1.5.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "message": "Package 'RingBuffer 1.5.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "RingBuffer",
       "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
+        "net6.0"
       ]
     }
   ]
