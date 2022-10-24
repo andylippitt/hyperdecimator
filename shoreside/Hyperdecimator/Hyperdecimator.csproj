@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6</TargetFramework>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="3.0.0" />
-    <PackageReference Include="NWaves" Version="0.9.4" />
+    <PackageReference Include="NWaves" Version="0.9.6" />
     <PackageReference Include="RingBuffer" Version="1.5.1" />
   </ItemGroup>
 </Project>

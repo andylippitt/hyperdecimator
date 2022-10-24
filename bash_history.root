@@ -1,0 +1,175 @@
+cp libftd2xx.* /usr/local/lib
+chmod 0755 /usr/local/lib/libftd2xx.so.1.4.8
+ln -sf /usr/local/lib/libftd2xx.so.1.4.8 /usr/local/lib/libftd2xx.so
+lsmod
+lsmod | ftd
+lsmod | grep ftd
+lsusb
+sudo reboot now
+ls
+cat start.sh 
+./start.sh 
+cat /dev/ttyUSB1 > tmp.2pdm 
+cat /dev/ttyUSB1 > tmp.2pdm 
+ls
+cd /usr/local
+ls
+cat hyperdecimator 
+./hyperdecimator 
+ls
+/usr/local/mysetbaud.py <>/dev/ttyUSB1 12000000
+/usr/local/mysetbaud.py <>/dev/ttyUSB1 12000000
+/usr/local/mysetbaud.py <>/dev/ttyUSB0 12000000
+cat /dev/ttyUSB0
+cat /dev/ttyUSB1
+cat /dev/ttyUSB1
+ls
+./hyperdecimator 
+\
+ls
+ps
+ps aux | grep hy
+watch ps aux
+ls
+cd /etc
+cd xinetd.
+ls
+cd xinetd.d/
+ls
+cat hyperdecimator 
+socat TCP:localhost:3333 stdout
+socat TCP:hyperdecimator.localdomain:3333 stdout
+socat TCP:hyperdecimator.localdomain:3333 stdout
+socat TCP:hyperdecimator.localdomain:3333 stdout
+sudo reboot now
+socat TCP:hyperdecimator.localdomain:3333 stdout
+/usr/local/hyperdecimator 
+cd 
+cd 
+ls
+cd ..
+ls
+cd usr//local/
+ls
+cat hyperdecimator 
+/usr/local/mysetbaud.py <>/dev/ttyUSB1 12000000
+cat /dev/ttyUSB1
+cat /dev/ttyUSB1
+lks
+ls
+exit
+cat /dev/ttyUSB1
+/usr/local/mysetbaud.py <>/dev/ttyUSB1 12000000
+cat /dev/ttyUSB1
+ls
+exit
+ls
+cd 
+ls
+mkdir hw
+cd hw
+ls
+cp /home/pi/driver/helloworld/* .
+ls
+make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
+ls
+cat modules.order 
+make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
+cd ..
+ls
+cd linux-76c49e60e742d0bebd798be972d67dd3fd007691
+ls
+cd mod
+ls
+ls -l
+cd 
+ls
+cd hw/
+ls
+make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
+ls
+make -C /lib/modules/`uname -r`/build M=$PWD modules_install
+ls
+make clean
+gunzip -c /proc/config.gz
+ls
+gunzip -c /proc/config.gz > .config
+make oldconfig
+ls
+ls
+make -C /lib/modules/`uname -r`/build M=$PWD modules_install
+make -C /lib/modules/`uname -r`/build M=$PWD
+make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
+ls
+ls
+rm built-in.a 
+ls
+rm Module.symvers 
+rm modules.order 
+ls
+make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
+ls
+ls -=la
+ls -la
+cat .built-in.a.cmd 
+cat .config 
+ls
+ls
+nano Makefile 
+make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
+ls
+cat hello.c 
+nano hello.c 
+make -C /lib/modules/$(uname -r)/build M=$(pwd) modules
+ls
+insmod hello.ko
+dmesg
+rmmod hello.ko
+dmesg
+ls
+cd ..
+ls
+ls
+cd 
+exit
+cd /root/linux-76c49e60e742d0bebd798be97
+ls
+cd root
+ls
+cd 
+ls
+cd linux-76c49e60e742d0bebd798be972d67dd3fd007691
+ls
+cd sr
+ls
+cd src
+ls
+make modules_prepare
+rpi-source
+rpi-source --default
+rpi-source --delete
+rpi-source 
+rpi-source --help
+ls
+cd 
+ls
+rm -rf linux-76c49e60e742d0bebd798be972d67dd3fd007691
+ls
+rm linux-76c49e60e742d0bebd798be972d67dd3fd007691.tar.gz 
+ls
+ls -l
+rm -rf linux 
+ls
+rpi-source --default
+exit
+time cat /dev/pen0 > output.8pdm
+ls -lh output.8pdm 
+ls -l output.8pdm 
+exity
+exit
+time cat /dev/hyperdecimator0 > recording.data
+ls -l
+exit
+ls
+ls ~/.bash_history 
+exit

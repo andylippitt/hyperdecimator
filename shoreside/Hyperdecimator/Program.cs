@@ -57,7 +57,7 @@
 
                     var mag = powers.Max() - powers.Min();
 
-                    if (mag > 2.5)
+                    if (mag > 0.5)
                     {
                         for (int i = 0; i < World.Virtuals.Length; i++)
                         {
