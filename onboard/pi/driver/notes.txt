@@ -16,6 +16,10 @@ sudo wget https://raw.githubusercontent.com/notro/rpi-source/master/rpi-source -
 # Make it executable
 sudo chmod +x /usr/bin/rpi-source
 
+
+sudo apt-get install phython2 
+sudo apt install python-is-python2
+
 # Tell the update mechanism that this is the latest version of the script
 /usr/bin/rpi-source -q --tag-update
 
